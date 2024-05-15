@@ -1,0 +1,11 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1715105297
+control.gd::GDScript::-1::1714503851::0::1::::<>Control<>::
+control.tscn::PackedScene::8875098521078199616::1714504362::0::1::::<><>::res://control.gd
+icon.svg::CompressedTexture2D::585501560120237992::1714417599::1714417611::1::::<><>::
+log_in.gd::GDScript::-1::1714503527::0::1::::<>Control<>::
+log_in.tscn::PackedScene::7250106790250075515::1714504362::0::1::::<><>::res://log_in.gd
+Node2D.gd::GDScript::-1::1714521798::0::1::::<>Area2D<>::
+node_2d.tscn::PackedScene::1467812996564445129::1714521832::0::1::::<><>::res://Node2D.gd
+player_stats.gd::GDScript::-1::1714504349::0::1::::<>Node<>::
+test.gd::GDScript::-1::1714674351::0::1::::<>Area2D<>::

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbmakarcirmnk"]
+
+[ext_resource type="Script" path="res://charecter_creator.gd" id="1_eq275"]
+[ext_resource type="PackedScene" uid="uid://b00373ty24k8g" path="res://sprites.tscn" id="1_sccl6"]
+
+[node name="charecter_creator" type="Node2D"]
+script = ExtResource("1_eq275")
+
+[node name="sprite" parent="." instance=ExtResource("1_sccl6")]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(10, 10)

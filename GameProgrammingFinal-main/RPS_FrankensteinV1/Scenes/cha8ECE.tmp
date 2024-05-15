@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://cuu8iovwbfxji"]
+
+[ext_resource type="Script" path="res://Scripts/character_select.gd" id="1_w2jvg"]
+[ext_resource type="Texture2D" uid="uid://c4tisk5pf3eka" path="res://Assets/right_arrow.png" id="2_amch8"]
+[ext_resource type="Texture2D" uid="uid://dq6d3tlwt76u1" path="res://Assets/left_arrow.png" id="2_henpt"]
+[ext_resource type="Texture2D" uid="uid://daf6gxa3f6h8n" path="res://Assets/characters/BIGG_stetson.png" id="2_qgw6w"]
+[ext_resource type="Texture2D" uid="uid://dcs0juaotabda" path="res://Assets/characters/cowboystickman.png" id="2_v22rb"]
+[ext_resource type="Texture2D" uid="uid://b7iurofa6mcj" path="res://Assets/characters/SewardSheriff.png" id="4_il1rm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjyuv"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puyf6"]
+atlas = ExtResource("2_qgw6w")
+region = Rect2(0, 0, 400, 984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0wax"]
+atlas = ExtResource("2_v22rb")
+region = Rect2(0, 0, 400, 666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aitp8"]
+atlas = ExtResource("4_il1rm")
+region = Rect2(0, 0, 400, 615)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kbb21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puyf6")
+}],
+"loop": true,
+"name": &"BIGG",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0wax")
+}],
+"loop": true,
+"name": &"COWBOY",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aitp8")
+}],
+"loop": true,
+"name": &"seward",
+"speed": 5.0
+}]
+
+[node name="SkinSelect" type="Node2D"]
+script = ExtResource("1_w2jvg")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1155.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kjyuv")
+
+[node name="LeftBTN" type="Button" parent="."]
+offset_left = 230.0
+offset_top = 325.0
+offset_right = 1578.0
+offset_bottom = 1763.0
+scale = Vector2(0.05, 0.05)
+icon = ExtResource("2_henpt")
+flat = true
+
+[node name="RigthBTN" type="Button" parent="."]
+offset_left = 850.0
+offset_top = 325.0
+offset_right = 2198.0
+offset_bottom = 1763.0
+scale = Vector2(0.05, 0.05)
+icon = ExtResource("2_amch8")
+flat = true
+icon_alignment = 1
+
+[node name="Skins" type="AnimatedSprite2D" parent="."]
+position = Vector2(577, 351)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_kbb21")
+animation = &"COWBOY"
+
+[node name="SkinsLeft" type="AnimatedSprite2D" parent="."]
+position = Vector2(395, 360)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_kbb21")
+animation = &"COWBOY"
+
+[node name="SkinsRight" type="AnimatedSprite2D" parent="."]
+position = Vector2(755, 360)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_kbb21")
+animation = &"BIGG"
+
+[connection signal="pressed" from="LeftBTN" to="." method="_on_left_btn_pressed"]
+[connection signal="pressed" from="RigthBTN" to="." method="_on_rigth_btn_pressed"]

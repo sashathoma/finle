@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6sah2t745mjt"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_katwb"]
+[ext_resource type="PackedScene" uid="uid://cuu8iovwbfxji" path="res://Scenes/character_select.tscn" id="2_vun4v"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_katwb")
+
+[node name="CharacterSelect" parent="." instance=ExtResource("2_vun4v")]

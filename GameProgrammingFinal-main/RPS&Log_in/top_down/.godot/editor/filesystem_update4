@@ -1,0 +1,6 @@
+res://node_2d.tscn
+res://Node2D.gd
+res://log_in.tscn
+res://log_in.gd
+res://player_stats.gd
+res://control.gd

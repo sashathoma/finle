@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://dypftt3c3sv0k"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_0ipgd"]
+
+[node name="Choice" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ipgd")
+
+[node name="rock" type="Button" parent="."]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 9.0
+offset_right = 441.0
+offset_bottom = 59.0
+scale = Vector2(5.33366, 5.9702)
+theme_override_font_sizes/font_size = 30
+text = "Rock"
+
+[node name="paper" type="Button" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 316.0
+offset_right = 160.0
+offset_bottom = 366.0
+scale = Vector2(5.33366, 5.9702)
+theme_override_font_sizes/font_size = 30
+text = "Paper"
+
+[node name="scissors" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 310.0
+offset_right = 717.0
+offset_bottom = 360.0
+scale = Vector2(3.61366, 5.9702)
+theme_override_font_sizes/font_size = 30
+text = "Scissors"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="rock" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="paper" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="scissors" to="." method="_on_button_3_pressed"]

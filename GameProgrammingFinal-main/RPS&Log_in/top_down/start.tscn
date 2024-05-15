@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmmdbovr1y5au"]
+
+[ext_resource type="Script" path="res://start.gd" id="1_yrs3y"]
+[ext_resource type="PackedScene" uid="uid://bea84voxi6hj5" path="res://character.tscn" id="2_oqoyw"]
+
+[node name="Start" type="Node2D"]
+script = ExtResource("1_yrs3y")
+
+[node name="The_Guy" parent="." instance=ExtResource("2_oqoyw")]
+unique_name_in_owner = true

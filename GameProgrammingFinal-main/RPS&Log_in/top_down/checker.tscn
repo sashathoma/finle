@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://cooyexatppicu"]
+
+[ext_resource type="Script" path="res://checker.gd" id="1_l6jf1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7y1q"]
+radius = 7.0
+
+[node name="Checker" type="Node2D"]
+script = ExtResource("1_l6jf1")
+
+[node name="up" type="Area2D" parent="."]
+position = Vector2(-8, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="up"]
+position = Vector2(8, -112)
+shape = SubResource("CircleShape2D_y7y1q")
+
+[node name="down" type="Area2D" parent="."]
+position = Vector2(-8, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="down"]
+position = Vector2(8, 96)
+shape = SubResource("CircleShape2D_y7y1q")
+
+[node name="right" type="Area2D" parent="."]
+position = Vector2(-8, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
+position = Vector2(96, 8)
+shape = SubResource("CircleShape2D_y7y1q")
+
+[node name="ColorRect" type="ColorRect" parent="right"]
+offset_left = 88.0
+offset_right = 101.0
+offset_bottom = 13.0
+
+[node name="left" type="Area2D" parent="."]
+position = Vector2(-8, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
+position = Vector2(-80, 8)
+shape = SubResource("CircleShape2D_y7y1q")
+
+[connection signal="area_entered" from="up" to="." method="up_door"]
+[connection signal="area_entered" from="down" to="." method="down_door"]
+[connection signal="area_entered" from="right" to="." method="right_door"]
+[connection signal="area_entered" from="left" to="." method="left_door"]
